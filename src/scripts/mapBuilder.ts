@@ -1,9 +1,9 @@
 import Floor from "./map/floor";
 import House from "./map/house";
 import Map from "./map/map";
-import Obstacle from "./map/obstacle";
 import Road, { Point } from "./map/road";
 import Terrain from "./map/terrain";
+import TrafficSignal from "./map/trafficSignal";
 
 type TerrainAction = {type: "wall", props: {entranceDir: number}}
   | {type: "house", props: {x: number, y: number, width: number, height: number, entranceDir: number}};
@@ -21,15 +21,15 @@ export default class MapBuilder {
     return this;
   }
 
-  public buildObstacle (x: number, y: number, width: number, height: number): MapBuilder {
-    const obstacle = new Obstacle(x, y, width, height);
-    this.map.add(obstacle);
-    return this;
-  }
-
   public buildFloor (x: number, y: number, width: number, height: number, color: string): MapBuilder {
     const floor = new Floor(x, y, width, height, color);
     this.map.setFloor(floor);
+    return this;
+  }
+
+  public buildTrafficSignal (x: number, y: number, dir: number): MapBuilder {
+    const ts = new TrafficSignal(x, y, dir);
+    this.map.add(ts);
     return this;
   }
 

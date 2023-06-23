@@ -35,4 +35,6 @@ export default class Road extends MapComponent {
     context.strokeStyle = '#FFFFFF';
     context.stroke(this.path);
   }
+
+  update (deltaTime: number): void {}
 }

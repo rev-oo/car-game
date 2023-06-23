@@ -14,6 +14,12 @@ export default class Map {
     this.floor = floor;
   }
 
+  public update (deltaTime: number):void {
+    for (const c of this.components) {
+      c.update(deltaTime);
+    }
+  }
+
   public draw(context: CanvasRenderingContext2D): void {
     if (this.floor) {
       this.floor.draw(context);

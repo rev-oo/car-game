@@ -36,6 +36,8 @@ window.addEventListener("load", function () {
       {type: 'wall', props: {entranceDir: 4}},
     ])
     .buildFloor(0, 0, canvas.width, canvas.height, '#136d15')
+    .buildTrafficSignal(240, 56, 0)
+    .buildTrafficSignal(262, 446, 1)
     .build();
   const car = new Car(game, {x: 25, y: 72, degree: 90});
   const goal = new Goal(860, 280);

@@ -28,6 +28,8 @@ export default class Terrain extends MapComponent {
     }
   }
 
+  update (deltaTime: number): void {}
+
   addWall ({entranceDir}: {entranceDir: number}): void {
     const wall = new Wall(this.x, this.y, this.width, this.height, entranceDir);
     this.components.push(wall);

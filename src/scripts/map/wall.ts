@@ -69,4 +69,6 @@ export default class Wall extends MapComponent {
         break;
     }
   }
+
+  update (deltaTime: number): void {}
 }

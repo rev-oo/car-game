@@ -44,6 +44,9 @@ export default class Game {
     this.checkCollision();
     this.checkWin()
     //
+    if (this.map) {
+      this.map.update(deltaTime);
+    }
     if (this.car) {
       this.car.update(this.inputHandler.getKeys(), deltaTime);
     }

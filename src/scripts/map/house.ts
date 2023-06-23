@@ -74,6 +74,8 @@ export default class House extends MapComponent {
     }
   }
 
+  update (deltaTime: number): void {}
+
   getBox(): Box {
     return this.box;
   }
