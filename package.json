@@ -5,7 +5,9 @@
   "main": "index.html",
   "scripts": {
     "start": "parcel index.html --open",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "parcel-bundler": "^1.6.1",
@@ -13,6 +15,7 @@
   },
   "devDependencies": {
     "@types/sat": "^0.0.32",
+    "gh-pages": "^5.0.0",
     "typescript": "4.4.4"
   },
   "resolutions": {
