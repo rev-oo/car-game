@@ -3,7 +3,7 @@ import { MapComponent } from "./component";
 import House from "./house";
 import Wall from "./wall";
 
-export default class Terrain extends MapComponent {
+export default class Terrain implements MapComponent {
   private x: number;
   private y: number;
   private width: number;
@@ -12,7 +12,6 @@ export default class Terrain extends MapComponent {
   private box: Box;
 
   constructor(x: number, y: number, width: number, height: number) {
-    super();
     this.x = x;
     this.y = y;
     this.width = width;

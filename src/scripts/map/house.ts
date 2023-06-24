@@ -13,7 +13,7 @@ const COLORS: ColorSet[] = [
   // {c1: '#FD8D5A', c2: '#E46E41', c3: '#F07A50'},
 ];
 
-export default class House extends MapComponent {
+export default class House implements MapComponent {
   private x: number;
   private y: number;
   private width: number;
@@ -23,7 +23,6 @@ export default class House extends MapComponent {
   private colorSet: ColorSet;
 
   constructor(x: number, y: number, width: number, height: number, entranceDir: number) {
-    super();
     this.x = x;
     this.y = y;
     this.width = width;

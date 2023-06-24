@@ -1,6 +1,6 @@
 import { MapComponent } from "./component";
 
-export default class Wall extends MapComponent {
+export default class Wall implements MapComponent {
   private x: number;
   private y: number;
   private width: number;
@@ -8,13 +8,14 @@ export default class Wall extends MapComponent {
   private entranceDir: number;
 
   constructor(x: number, y: number, width: number, height: number, entranceDir: number = 0) {
-    super();
     this.x = x;
     this.y = y;
     this.width = width;
     this.height = height;
     this.entranceDir = entranceDir;
   }
+
+  getBox(): void {}
 
   draw(context: CanvasRenderingContext2D): void {
     context.strokeStyle = '#BC4A3C';

@@ -1,8 +1,14 @@
 import { Box, Vector } from "sat";
 import { MapComponent } from "./component";
-import { TrafficSignalGreen, TrafficSignalRed, TrafficSignalState, TrafficSignalYellow, trafficSignalStates } from "./trafficSinalStates";
+import {
+  TrafficSignalGreen,
+  TrafficSignalRed,
+  TrafficSignalState,
+  TrafficSignalYellow,
+  trafficSignalStates,
+} from "./trafficSinalStates";
 
-export default class TrafficSignal extends MapComponent {
+export default class TrafficSignal implements MapComponent {
   private x: number;
   private y: number;
   private width: number;
@@ -16,7 +22,6 @@ export default class TrafficSignal extends MapComponent {
   private currentState: TrafficSignalState;
 
   constructor (x: number, y: number, dir: number) {
-    super()
     this.x = x;
     this.y = y;
     this.dir = dir;

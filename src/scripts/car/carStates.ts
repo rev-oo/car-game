@@ -3,7 +3,6 @@ import Car from "./car";
 
 export enum carStates { ON, OFF };
 
-// State base
 export abstract class CarState {
   protected car: Car;
   constructor (car: Car) {

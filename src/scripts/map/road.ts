@@ -5,12 +5,11 @@ export type Point = {
   y: number;
 };
 
-export default class Road extends MapComponent {
+export default class Road implements MapComponent {
   private points: Point[];
   private path: Path2D;
 
   constructor(points: Point[]) {
-    super();
     this.points = points;
     this.path = new Path2D();
     this.path.moveTo(this.points[0].x, this.points[0].y);
@@ -18,6 +17,8 @@ export default class Road extends MapComponent {
       this.path.lineTo(point.x, point.y);
     }
   }
+
+  getBox(): void {}
 
   draw(context: CanvasRenderingContext2D): void {
     // Lógica para desenhar uma estrada no contexto do canvas

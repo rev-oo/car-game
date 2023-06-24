@@ -45,7 +45,7 @@ export default class Car {
     this.currentState = this.states[carStates.OFF];
   }
 
-  update (input: string[], deltaTime: number) {
+  public update (input: string[], deltaTime: number) {
     this.currentState.update(input, deltaTime);
     //
     if (this.speed > 0) {
@@ -65,7 +65,7 @@ export default class Car {
     this.y += dy;
   }
 
-  draw (context: CanvasRenderingContext2D): void {
+  public draw (context: CanvasRenderingContext2D): void {
     context.save();
     context.translate(this.x, this.y);
     context.rotate((Math.PI / 180) * this.degree);
@@ -87,8 +87,8 @@ export default class Car {
   get radian (): number {
     return (this.degree - 90) * (Math.PI / 180);
   }
-  
-  setState (state: carStates) {
+
+  public setState (state: carStates) {
     this.currentState = this.states[state];
   }
 
